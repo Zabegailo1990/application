@@ -1,0 +1,12 @@
+.tabs{
+    &__header{
+        display: flex;
+    }
+
+    &__trigger{
+        cursor: pointer;
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+}

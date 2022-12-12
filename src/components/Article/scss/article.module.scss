@@ -1,0 +1,8 @@
+.article{
+    position: static;
+    background-color: aqua;
+    
+    &__row{
+        display: flex;
+    }
+}
