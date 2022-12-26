@@ -2,7 +2,7 @@ import Button from '../Button'
 import styles from './scss/card.module.scss'
 
 function Card(props) {
-    const { img,  title,  price,  } = props
+    const { img,  title,  price, } = props
 
     return (
         <div className={styles.card}>

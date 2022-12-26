@@ -1,0 +1,20 @@
+.test{
+    background-color: red;
+
+    &__button{
+        width: 20px;
+        height: 20px;
+        background-color: yellow;
+
+        &_active{
+            background-color: green;
+        }
+    }
+
+    &__text{
+        font-size: 12px;
+    }
+    &__link{
+        text-decoration: none;
+    }
+}

@@ -6,26 +6,20 @@ import Guarantee from '../../components/Guarantee'
 import Newsletter from '../../components/Newsletter'
 import Review from '../../components/Review'
 import Signup from '../../components/Signup'
-import Slider from '../../components/Slider'
+import MySwiper from '../../components/MySwiper'
 import Social from '../../components/Social'
-import { bannerData, benefitsData, categoryData, cardsData } from '../../API'
+import { bannerData, benefitsData, categoryData } from '../../API'
 import Category from '../../components/Category'
 import CardsTab from './components/CardsTab'
 
 import styles from './scss/home.module.scss'
+import TestComponent from '../../components/TestComponent'
 
 function Home() {
-
-    const sortCards = (cards) => {
-    }
-
-    console.log(sortCards(cardsData()))
-
-
     return (
         <div className={styles.home}>
             <div className={styles.home__container}>
-                <Slider>
+                <MySwiper interval={10} pagination={false} navigation={false}>
                     {bannerData()?.map((banner) => (
                         <Banner
                             key={banner.id}
@@ -35,7 +29,7 @@ function Home() {
                             buttonText={banner.buttonText}
                         />
                     ))}
-                </Slider>
+                </MySwiper>
                 <Guarantee />
                 <Signup />
                 <div className={styles.home__benefits}>
@@ -60,11 +54,12 @@ function Home() {
                 </div>
                 <Article />
                 <Custom />
-                <Slider />
+                <MySwiper />
                 <Social />
                 <Review />
                 <Newsletter />
                 <CardsTab />
+                <TestComponent active={false}></TestComponent>
             </div>
         </div>
     )

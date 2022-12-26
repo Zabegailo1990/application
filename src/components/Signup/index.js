@@ -18,7 +18,7 @@ function Signup() {
             <p className={styles.signup__text}>
                 Stylish bicycle mechanic doing his professional work in workshop
             </p>
-            <Field />
+            <Field btn={true} placeholder={'Enter your E-Mail'}/>
         </div>
     )
 }

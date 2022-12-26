@@ -1,0 +1,14 @@
+.my-swiper{
+
+    &__navigation{
+        display: flex;
+    }
+
+    &__prev{
+        position: static;
+    }
+
+    &__next{
+        position: static;
+    }
+}

@@ -14,8 +14,9 @@ function Banner(props) {
                 </div>
                 <Button
                     className={styles.banner__button}
-                    theme="yellow"
                     text={buttonText}
+                    iconPath={'icon-right'}
+                    path={'#'}
                 />
             </div>
         </div>

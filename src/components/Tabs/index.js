@@ -1,9 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './scss/tabs.module.scss'
 
 function Tabs(props) {
-    const { items = [{label: 'Tab one'}, {label: 'Tab two'}, {label: 'Tab three'}] } = props
-    const [current, setCurrent] = useState(items[0].label)
+    const {
+        items = ['Tab one', 'Tab two', 'Tab three'],
+        children,
+        callback,
+    } = props
+    
+    const [current, setCurrent] = useState(items[0])
+    
+    const setActiveTab = (label) => {
+        if (label !== current) {
+            setCurrent(label)
+            callback(label)
+        }
+    }
+
+    useEffect(() => {
+        callback(items[0])
+    }, [])
 
     return (
         <div className={styles.tabs}>
@@ -12,15 +28,13 @@ function Tabs(props) {
                     <div
                         key={index}
                         className={styles.tabs__trigger}
-                        onClick={() => setCurrent(trigger.label)}
+                        onClick={() => setActiveTab(trigger)}
                     >
-                        {trigger.label}
+                        {trigger}
                     </div>
                 ))}
             </div>
-            {items?.map((content, index) => (
-                current === content.label ? <div key={index} className={styles.tabs__content}>{content.children}</div> : null
-            ))}
+            <div className={styles.tabs__content}>{children}</div>
         </div>
     )
 }

@@ -1,16 +1,16 @@
 .button{
-    padding: 16px;
-    background-color: #ffde00;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    column-gap: 6px;
+    padding: 12px;
+    background-color: var(--btn-color-yellow);
     text-transform: uppercase;
     border-radius: 25px;
-
+    
     &__text{
+        font-family: 'Montserrat';
         font-size: 10px;
+        font-weight: 700;
     }
-
-    &__gray{
-        
-    }
-
-
 }

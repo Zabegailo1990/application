@@ -1,8 +1,9 @@
 import styles from './scss/guarantee.module.scss'
+import cn from 'classnames'
 
-function Guarantee() {
+function Guarantee({ className }) {
     return (
-        <div className={styles.guarantee}>
+        <div className={cn(styles.guarantee, className)}>
             <img
                 className={styles.guarantee__img}
                 src="../media/img/guarantee.jpg"
