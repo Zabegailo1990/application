@@ -8,7 +8,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     margin: 0;
 }
 
@@ -31,15 +32,4 @@ button {
 a{
     text-decoration: none;
     color: inherit;
-}
-
-:root {
-    --btn-color-yellow: yellow;
-}
-
-.icon {
-    fill: black;
-    display: block;
-    width: 16px;
-    height: 16px;
 }

@@ -1,4 +1,4 @@
-.signup{
+.signup {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,36 +7,36 @@
     overflow: hidden;
     height: 226px;
     padding: 20px;
+}
 
-    &__row{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    &__title{
-        font-family: 'Montserrat';
-        font-weight: 700;
-        line-height: 30px;
-        font-size: 20px;
-        color: #fff;
-        text-transform: uppercase;
-    }
+.title {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
 
-    &__decor{
-        color: #ffde00;
-    }
-    
-    &__img{
-        flex-shrink: 0;
-        height: 46px;
-        width: 68px;
-    }
+.decor {
+    color: #ffde00;
+}
 
-    &__text{
-        font-size: 12px;
-        line-height: 18px;
-        font-weight: 500;
-        color: #666666;
-    }
+.img {
+    flex-shrink: 0;
+    height: 46px;
+    width: 68px;
+}
+
+.text {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #666666;
 }

@@ -1,3 +1,5 @@
+import News from '../../components/News'
+import Rating from '../../components/Rating'
 import Article from '../../components/Article'
 import Banner from '../../components/Banner'
 import Benefit from '../../components/Benefit'
@@ -11,9 +13,10 @@ import Social from '../../components/Social'
 import { bannerData, benefitsData, categoryData } from '../../API'
 import Category from '../../components/Category'
 import CardsTab from './components/CardsTab'
+import List from '../../components/List'
+import Footer from '../../components/Footer'
 
 import styles from './scss/home.module.scss'
-import TestComponent from '../../components/TestComponent'
 
 function Home() {
     return (
@@ -46,20 +49,21 @@ function Home() {
                     {categoryData()?.map((item) => (
                         <Category
                             key={item.id}
-                            parentClass={styles.home__category}
+                            className={styles.home__category}
                             img={item.img}
                             title={item.title}
                         />
                     ))}
                 </div>
-                <Article />
+                <List header={['shit', <Rating/>]}/>
                 <Custom />
-                <MySwiper />
                 <Social />
                 <Review />
                 <Newsletter />
                 <CardsTab />
-                <TestComponent active={false}></TestComponent>
+                <News img={['../media/img/banner.jpg']}/>
+                <Article/>
+                <Footer/>
             </div>
         </div>
     )

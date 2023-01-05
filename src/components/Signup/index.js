@@ -1,24 +1,32 @@
 import Field from '../Field'
+import Icon from '../Icon'
+import Button from '../Button'
 import styles from './scss/signup.module.scss'
 
 function Signup() {
     return (
         <div className={styles.signup}>
-            <div className={styles.signup__row}>
-                <h1 className={styles.signup__title}>
+            <div className={styles.row}>
+                <h1 className={styles.title}>
                     signup
-                    <span className={styles.signup__decor}> for newsletter</span>
+                    <span className={styles.decor}>
+                        {' '}
+                        for newsletter
+                    </span>
                 </h1>
                 <img
-                    className={styles.signup__img}
+                    className={styles.img}
                     src="../media/img/mail.svg"
                     alt=""
                 />
             </div>
-            <p className={styles.signup__text}>
+            <p className={styles.text}>
                 Stylish bicycle mechanic doing his professional work in workshop
             </p>
-            <Field btn={true} placeholder={'Enter your E-Mail'}/>
+            <Field
+                button={<Button icon={<Icon iconName={'icon-right'} />} />}
+                placeholder={'Enter your E-Mail'}
+            />
         </div>
     )
 }

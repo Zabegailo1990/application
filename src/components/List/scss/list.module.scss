@@ -1,0 +1,29 @@
+.list{
+    display: flex;
+    font-family: 'Roboto';
+}
+
+.img{
+    width: 70px;
+    height: 70px;
+    margin-right: 13px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding-top: 8px;
+}
+
+.header{
+    display: flex;
+    column-gap: 8px;
+    font-size: 12px;
+    color: #818690;
+}
+
+.name{
+    font-size: 15px;
+    font-weight: 700;
+}

@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation } from 'swiper'
-import cn from 'classnames'
+import Icon from '../Icon'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -18,10 +18,6 @@ function MySwiper(props) {
         pagination,
         interval,
         slideShow,
-        iconPath={
-            prev: 'icon-prev',
-            next: 'icon-next'
-        }
     } = props
 
     // Условный рендеринг панели навигации
@@ -29,12 +25,8 @@ function MySwiper(props) {
         if (navigation)
             return (
                 <div className="my-swiper__navigation">
-                    <svg className="icon my-swiper__button my-swiper__prev">
-                        <use xlinkHref={`../media/sprite/icons-sprite.svg#${iconPath.prev}`} />
-                    </svg>
-                    <svg className="icon my-swiper__button my-swiper__next">
-                        <use xlinkHref={`../media/sprite/icons-sprite.svg#${iconPath.next}`} />
-                    </svg>
+                    <Icon iconName={'icon-prev'} className={'my-swiper__prev'}/>
+                    <Icon iconName={'icon-next'} className={'my-swiper__next'}/>
                 </div>
             )
     }

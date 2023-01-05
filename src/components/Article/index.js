@@ -1,19 +1,11 @@
-import classNames from 'classnames'
+import cn from 'classnames'
 import styles from './scss/article.module.scss'
 
-function Article() {
-
-    const classes = classNames({
-        article: {
-            [styles.article] : true,
-            [styles.article__img] : true,
-        },
-        
-    })
+function Article(theme) {
 
     return (
-        <div className={classes}>
-            <img className={classes} src="" alt="" />
+        <div className={cn(styles.article, {[styles.article_theme] : theme})}>
+            <img className={cn(styles.img)} src="" alt="" />
         </div>
     )
 }

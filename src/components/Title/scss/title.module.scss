@@ -1,0 +1,12 @@
+.title{
+    font-size: 22px;
+    display: flex;
+
+    &_reverse{
+        flex-direction: row-reverse;
+    }
+}
+
+.decor{
+    color: yellow;
+}

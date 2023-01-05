@@ -1,25 +1,31 @@
-import styles from './scss/banner.module.scss'
-import Button from '../Button'
+import Icon from '../Icon'
+import {
+    StyledBanner,
+    Image,
+    Row,
+    Col,
+    Title,
+    Offer,
+    StyledButton,
+} from './styles/Banner.styled'
 
-function Banner(props) {
-    const { img, title, offer, buttonText } = props
+function Banner({ img, title, offer, buttonText }) {
 
     return (
-        <div className={styles.banner}>
-            <img className={styles.banner__img} src={img} alt="" />
-            <div className={styles.banner__row}>
-                <div className={styles.banner__col}>
-                    <h1 className={styles.banner__title}>{title}</h1>
-                    <div className={styles.banner__offer}>{offer}</div>
-                </div>
-                <Button
-                    className={styles.banner__button}
+        <StyledBanner>
+            <Image src={img} alt="" />
+            <Row>
+                <Col>
+                    <Title>{title}</Title>
+                    <Offer>{offer}</Offer>
+                </Col>
+                <StyledButton
                     text={buttonText}
-                    iconPath={'icon-right'}
+                    icon={<Icon iconName={'icon-right'} />}
                     path={'#'}
                 />
-            </div>
-        </div>
+            </Row>
+        </StyledBanner>
     )
 }
 
