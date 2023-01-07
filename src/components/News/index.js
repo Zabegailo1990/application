@@ -1,25 +1,34 @@
 import {
     StyledNews,
     Promo,
-    Inner,
+    StyledDate,
+    StyledStatistic,
     Title,
     Img,
     Text,
 } from './styles/News.styled'
-import Statistic from '../Statistic'
-import Date from '../Date'
 import MySwiper from '../MySwiper'
 
-function News({ img, title, text }) {
+function News({ img, date, countComments, countViewers, title, text }) {
     return (
         <StyledNews>
             <Promo>
-                <Inner>
-                    <Date />
-                    <Statistic />
-                </Inner>
+                <StyledDate date={date} />
+                <StyledStatistic
+                    countComments={countComments}
+                    countViewers={countViewers}
+                />
                 {img.length > 1 ? (
-                    <MySwiper>
+                    <MySwiper
+                        interval={10}
+                        positionNav="center"
+                        btnColor='#fff'
+                        btnClass={[
+                            'my-swiper__prev-news',
+                            'my-swiper__next-news',
+                        ]}
+                        swipe={false}
+                    >
                         {img?.map((item, index) => (
                             <Img src={item} alt="" key={index} />
                         ))}

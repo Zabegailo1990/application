@@ -1,7 +1,7 @@
-import styles from './scss/custom.module.scss'
+import { StyledCustom} from './styles/Custom.styled'
 
 function Custom() {
-    return <div className={styles.custom}>Custom</div>
+    return <StyledCustom>Custom</StyledCustom>
 }
 
 export default Custom

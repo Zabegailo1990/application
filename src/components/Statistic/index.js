@@ -6,10 +6,10 @@ import {
     StyledIcon,
 } from './styles/Statistic.styled'
 
-function Statistic({ countComments, countViewers, theme }) {
+function Statistic({ className, countComments, countViewers, theme }) {
     
     return (
-        <StyledStatistic>
+        <StyledStatistic className={className}>
             {countComments && (
                 <Col>
                     <StyledIcon

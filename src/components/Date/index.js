@@ -1,7 +1,7 @@
-import { StyledDate} from './styles/Date.styled'
+import { StyledDate } from './styles/Date.styled'
 
-function Date() {
-    return <StyledDate>20.12.2016</StyledDate>
+function Date({ className, date }) {
+    return <StyledDate className={className}>{date}</StyledDate>
 }
 
 export default Date

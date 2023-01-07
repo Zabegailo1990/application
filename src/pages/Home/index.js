@@ -1,4 +1,4 @@
-import News from '../../components/News'
+import ContainerNewsTab from './components/ContainerNewsTab'
 import Rating from '../../components/Rating'
 import Article from '../../components/Article'
 import Banner from '../../components/Banner'
@@ -55,15 +55,15 @@ function Home() {
                         />
                     ))}
                 </div>
-                <List header={['shit', <Rating/>]}/>
+                <List header={['shit', <Rating />]} />
                 <Custom />
                 <Social />
                 <Review />
                 <Newsletter />
                 <CardsTab />
-                <News img={['../media/img/banner.jpg']}/>
-                <Article/>
-                <Footer/>
+                <ContainerNewsTab />
+                <Article />
+                <Footer />
             </div>
         </div>
     )

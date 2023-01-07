@@ -1,51 +1,65 @@
+import { StyledMySwiper, StyledNavigation } from './styles/MySwiper.styled'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation } from 'swiper'
+
 import Icon from '../Icon'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import './scss/my-swiper.scss'
 
 function MySwiper(props) {
-
     const {
         children,
-        navigation={
-            prevEl: '.my-swiper__prev',
-            nextEl: '.my-swiper__next',
+        btnClass = ['my-swiper__prev', 'my-swiper__next'],
+        btnColor,
+        navigation = {
+            prevEl: `.${btnClass[0]}`,
+            nextEl: `.${btnClass[1]}`,
         },
+        icons = ['icon-prev', 'icon-next'],
         pagination,
         interval,
         slideShow,
+        positionNav,
+        swipe = true,
     } = props
 
     // Условный рендеринг панели навигации
     const MySwiperNavigation = () => {
         if (navigation)
             return (
-                <div className="my-swiper__navigation">
-                    <Icon iconName={'icon-prev'} className={'my-swiper__prev'}/>
-                    <Icon iconName={'icon-next'} className={'my-swiper__next'}/>
-                </div>
+                <StyledNavigation positionNav={positionNav}>
+                    <Icon
+                        iconName={icons[0]}
+                        color={btnColor}
+                        className={btnClass[0]}
+                    />
+                    <Icon
+                        iconName={icons[1]}
+                        color={btnColor}
+                        className={btnClass[1]}
+                    />
+                </StyledNavigation>
             )
     }
 
     return (
-        <div className="my-swiper">
+        <StyledMySwiper>
             <Swiper
                 modules={[Pagination, Navigation]}
                 pagination={pagination}
                 navigation={navigation}
                 spaceBetween={interval}
                 slidesPerView={slideShow}
+                allowTouchMove={swipe}
             >
                 {children?.map((slide, index) => (
                     <SwiperSlide key={index}>{slide}</SwiperSlide>
                 ))}
                 {MySwiperNavigation()}
             </Swiper>
-        </div>
+        </StyledMySwiper>
     )
 }
 
