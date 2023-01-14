@@ -6,11 +6,11 @@ import Benefit from '../../components/Benefit'
 import Custom from '../../components/Custom'
 import Guarantee from '../../components/Guarantee'
 import Newsletter from '../../components/Newsletter'
-import Review from '../../components/Review'
+import Reviews from '../../components/Reviews'
 import Signup from '../../components/Signup'
 import MySwiper from '../../components/MySwiper'
 import Social from '../../components/Social'
-import { bannerData, benefitsData, categoryData } from '../../API'
+import { bannerData, benefitsData, categoryData, ReviewsData } from '../../API'
 import Category from '../../components/Category'
 import CardsTab from './components/CardsTab'
 import List from '../../components/List'
@@ -58,7 +58,7 @@ function Home() {
                 <List header={['shit', <Rating />]} />
                 <Custom />
                 <Social />
-                <Review />
+                <Reviews data={ReviewsData()} />
                 <Newsletter />
                 <CardsTab />
                 <ContainerNewsTab />

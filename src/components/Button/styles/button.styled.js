@@ -17,7 +17,7 @@ export const Inner = styled.div`
 
 export const Text = styled.p`
     font-family: 'Montserrat';
-    font-size: 10px;
+    font-size: ${({size}) => size ? size : '12px'};
     font-weight: 700;
     text-transform: uppercase;
 `

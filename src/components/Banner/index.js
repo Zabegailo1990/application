@@ -10,7 +10,7 @@ import {
 } from './styles/Banner.styled'
 
 function Banner({ img, title, offer, buttonText }) {
-
+    
     return (
         <StyledBanner>
             <Image src={img} alt="" />
@@ -21,6 +21,7 @@ function Banner({ img, title, offer, buttonText }) {
                 </Col>
                 <StyledButton
                     text={buttonText}
+                    textSize={'10px'}
                     icon={<Icon iconName={'icon-right'} />}
                     path={'#'}
                 />

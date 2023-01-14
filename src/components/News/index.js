@@ -22,8 +22,9 @@ function News({ img, date, countComments, countViewers, title, text }) {
                     <MySwiper
                         interval={10}
                         positionNav="center"
-                        btnColor='#fff'
-                        btnClass={[
+                        pagination={false}
+                        buttonsColor='#fff'
+                        buttonsClass={[
                             'my-swiper__prev-news',
                             'my-swiper__next-news',
                         ]}

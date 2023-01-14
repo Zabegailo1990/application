@@ -2,32 +2,26 @@ import styled, { css } from 'styled-components/macro'
 
 export const StyledMySwiper = styled.div`
     position: relative;
-`
-
-export const StyledNavigation = styled.div`
-    display: flex;
-    
     ${({ positionNav }) => {
-        switch (positionNav) {
-            case 'center':
-                return css`
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 100%;
-                    justify-content: space-between;
-                    padding: 0 12px;
-                    z-index: 1000;
-                `
-            default:
-                return css`
-                    justify-content: center;
-                    column-gap: 20px;
-                `
-        }
+        if (positionNav === 'top-right')
+            return css`
+                .swiper {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+            `
     }}
-`
+    
+    .swiper-horizontal>.swiper-pagination-progressbar{
+        margin-top: 1px;
+        height: 1px;
+        background-color: #e8ebf1;
+    }
 
-export const Control = styled.div`
-    position: static;
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background: #ffde00;
+        height: 2px;
+        top: -1px;
+        
+    }
 `
