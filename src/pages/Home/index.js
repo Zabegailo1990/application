@@ -1,11 +1,10 @@
-import ContainerNewsTab from './components/ContainerNewsTab'
+import ContainerNewsSlider from './components/ContainerNewsSlider'
 import Rating from '../../components/Rating'
 import Article from '../../components/Article'
 import Banner from '../../components/Banner'
 import Benefit from '../../components/Benefit'
 import Custom from '../../components/Custom'
 import Guarantee from '../../components/Guarantee'
-import Newsletter from '../../components/Newsletter'
 import Reviews from '../../components/Reviews'
 import Signup from '../../components/Signup'
 import MySwiper from '../../components/MySwiper'
@@ -15,7 +14,6 @@ import Category from '../../components/Category'
 import CardsTab from './components/CardsTab'
 import List from '../../components/List'
 import Footer from '../../components/Footer'
-
 import styles from './scss/home.module.scss'
 
 function Home() {
@@ -59,9 +57,8 @@ function Home() {
                 <Custom />
                 <Social />
                 <Reviews data={ReviewsData()} />
-                <Newsletter />
                 <CardsTab />
-                <ContainerNewsTab />
+                <ContainerNewsSlider />
                 <Article />
                 <Footer />
             </div>

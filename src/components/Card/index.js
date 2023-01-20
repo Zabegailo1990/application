@@ -1,26 +1,52 @@
 import Button from '../Button'
-import styles from './scss/card.module.scss'
+import { useState } from 'react'
+import {
+    StyledCard,
+    Promo,
+    Img,
+    Category,
+    Title,
+    Row,
+    Buttons,
+} from './styles/Card.styled'
+import Price from './components/Price'
+import Availability from './components/Availability'
+import Icon from '../Icon'
 
-function Card(props) {
-    const { img,  title,  price, } = props
+function Card({ img, category, title, count }) {
+
+    const [isActiveFavorite, setFavorite] = useState(false)
 
     return (
-        <div className={styles.card}>
-            <img className={styles.card__img} src={img} alt="" />
-            <div className={styles.card__category}>category</div>
-            <h2 className={styles.card__title}>{title}</h2>
-            <div className={styles.card__rating}></div>
-            <div className={styles.card__row}>
-                <div className={styles.card__price}>{price}</div>
-                <div className={styles.card__availability}>
-                    Available for order
-                </div>
-            </div>
-            <div className={styles.card__row}>
-                <Button />
-                <Button />
-            </div>
-        </div>
+        <StyledCard>
+            <Promo>
+                <Img src={img} alt="" />
+            </Promo>
+            <Category>{category}</Category>
+            <Title>{title}</Title>
+            <Row>
+                <Price />
+                <Availability count={count} />
+            </Row>
+            <Buttons>
+                <Button
+                    widthFull={true}
+                    reverse={true}
+                    icon={<Icon iconName="icon-cart" />}
+                    text="ADD TO CART"
+                />
+                <Button
+                    onClick={() => setFavorite(!isActiveFavorite)}
+                    theme='#e8ebf1'
+                    icon={
+                        <Icon
+                            iconName="icon-heart"
+                            color={isActiveFavorite ? 'red' : '#818690'}
+                        />
+                    }
+                />
+            </Buttons>
+        </StyledCard>
     )
 }
 

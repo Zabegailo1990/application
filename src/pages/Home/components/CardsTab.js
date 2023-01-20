@@ -16,7 +16,7 @@ function CardsTab() {
             callback={handleSwitchTab}
             items={['new', 'hit', 'stock', 'most popular']}
         >
-            <MySwiper>
+            <MySwiper pagination={false}>
                 {cardsData()
                     .filter((card) => {
                         switch (current) {
@@ -34,6 +34,7 @@ function CardsTab() {
                         <Card
                             key={card.id}
                             img={card.img}
+                            category={card.category}
                             title={card.title}
                             price={card.price}
                         />

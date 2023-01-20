@@ -20,15 +20,15 @@ function News({ img, date, countComments, countViewers, title, text }) {
                 />
                 {img.length > 1 ? (
                     <MySwiper
-                        interval={10}
-                        positionNav="center"
+                        spaceBetween={10}
+                        positionNavigation="center"
                         pagination={false}
-                        buttonsColor='#fff'
+                        allowTouchMove={false}
+                        buttonsColor={'#fff'}
                         buttonsClass={[
                             'my-swiper__prev-news',
                             'my-swiper__next-news',
                         ]}
-                        swipe={false}
                     >
                         {img?.map((item, index) => (
                             <Img src={item} alt="" key={index} />

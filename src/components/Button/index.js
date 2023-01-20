@@ -1,9 +1,9 @@
-import { Btn, Inner, Text } from './styles/button.styled'
+import { StyledButton, Inner, Text } from './styles/button.styled'
 
-function Button({ className, text, textSize='12px', icon, path }) {
-    
+function Button({ className, text, textSize, icon, path, reverse, theme, widthFull, ...props }) {
+
     const content = (
-        <Inner>
+        <Inner reverse={reverse}>
             {text && <Text size={textSize}>{text}</Text>}
             {icon}
         </Inner>
@@ -12,13 +12,16 @@ function Button({ className, text, textSize='12px', icon, path }) {
     const Tag = path ? 'a' : 'button'
 
     return (
-        <Btn
+        <StyledButton 
             as={Tag} 
-            href={path} 
+            href={path}
+            widthFull={widthFull}
+            bg={theme} 
             className={className}
+            {...props}
         >
             {content}
-        </Btn>
+        </StyledButton>
     )
 }
 

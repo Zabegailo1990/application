@@ -1,10 +1,12 @@
-import { StyledMySwiper } from './styles/MySwiper.styled'
+import {
+    StyledMySwiper,
+    CustomNavigation,
+    CustomPagination,
+} from './styles/MySwiper.styled'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation } from 'swiper'
-import CustomNavigation from './components/CustomNavigation'
-import CustomPagination from './components/CustomPagination'
 
-// import Icon from '../Icon'
+import Icon from '../Icon'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -13,9 +15,10 @@ import 'swiper/css/navigation'
 function MySwiper(props) {
     const {
         children,
-        buttonsClass = ['my-swiper__prev', 'my-swiper__next'],
         icons = ['icon-prev', 'icon-next'],
+        buttonsClass = ['my-swiper__prev', 'my-swiper__next'],
         buttonsColor,
+        positionNavigation,
         navigation = {
             prevEl: `.${buttonsClass[0]}`,
             nextEl: `.${buttonsClass[1]}`,
@@ -26,32 +29,47 @@ function MySwiper(props) {
         },
         spaceBetween,
         slidesPerView,
-        positionNav,
-        allowTouchMove = true,
+        allowTouchMove,
     } = props
 
+    const renderPagination = () => {
+        if (pagination) {
+            return <CustomPagination className="my-swiper__pagination" />
+        }
+    }
+
+    const renderNavigation = () => {
+        if (navigation) {
+            return (
+                <CustomNavigation positionNavigation={positionNavigation}>
+                    {icons?.map((item, index) => (
+                        <Icon
+                            key={index}
+                            iconName={item}
+                            color={buttonsColor}
+                            className={buttonsClass[index]}
+                        />
+                    ))}
+                </CustomNavigation>
+            )
+        }
+    }
+
     return (
-        <StyledMySwiper positionNav={positionNav}>
+        <StyledMySwiper positionNavigation={positionNavigation}>
             <Swiper
                 modules={[Pagination, Navigation]}
                 pagination={pagination}
                 navigation={navigation}
                 spaceBetween={spaceBetween}
-                slidesPerView={slidesPerView}
                 allowTouchMove={allowTouchMove}
+                slidesPerView={slidesPerView}
             >
                 {children?.map((slide, index) => (
                     <SwiperSlide key={index}>{slide}</SwiperSlide>
                 ))}
-                {pagination && <CustomPagination />}
-                {navigation && (
-                    <CustomNavigation
-                        icons={icons}
-                        buttonsClass={buttonsClass}
-                        buttonsColor={buttonsColor}
-                        positionNav={positionNav}
-                    />
-                )}
+                {renderPagination()}
+                {renderNavigation()}
             </Swiper>
         </StyledMySwiper>
     )
