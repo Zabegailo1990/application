@@ -47,7 +47,7 @@ export const CustomNavigation = styled.div`
             case 'top-right':
                 return css`
                     align-self: flex-end;
-                    margin-bottom: 26px;
+                    margin-bottom: 20px;
                     column-gap: 20px;
                 `
             default:

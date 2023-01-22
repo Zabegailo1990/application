@@ -1,6 +1,6 @@
 import { StyledButton, Inner, Text } from './styles/button.styled'
 
-function Button({ className, text, textSize, icon, path, reverse, theme, widthFull, ...props }) {
+function Button({ className, text, textSize, icon, path, reverse, theme, width, ...props }) {
 
     const content = (
         <Inner reverse={reverse}>
@@ -15,7 +15,7 @@ function Button({ className, text, textSize, icon, path, reverse, theme, widthFu
         <StyledButton 
             as={Tag} 
             href={path}
-            widthFull={widthFull}
+            widthFull={width}
             bg={theme} 
             className={className}
             {...props}

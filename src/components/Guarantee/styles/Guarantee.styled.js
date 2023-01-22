@@ -16,7 +16,19 @@ export const Img = styled.img`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
+`
+
+export const Inner = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
 `
 
 export const Title = styled.h1`

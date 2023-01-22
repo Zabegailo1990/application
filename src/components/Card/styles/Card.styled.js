@@ -4,6 +4,7 @@ export const StyledCard = styled.div`
     width: 300px;
     padding: 20px;
     border-radius: 4px;
+    background-color: #fff;
 `
 
 export const Promo = styled.div`
@@ -41,4 +42,5 @@ export const Row = styled.div`
 
 export const Buttons = styled(Row)`
     column-gap: 8px;
+    margin-bottom: 0;
 `

@@ -4,8 +4,7 @@ export const StyledButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-grow: ${({widthFull}) => widthFull ? 1 : 0};
-    flex-shrink: 0;
+    width: ${({widthFull}) => widthFull || 'fit-content'};
     padding: 12px;
     background-color: ${({bg}) => bg || '#ffde00'};
     border-radius: 25px;

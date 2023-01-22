@@ -7,15 +7,14 @@ export const StyledCategory = styled.div`
     justify-content: flex-end;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0px -82px 32px -19px rgba(0, 0, 0, 0.42) inset;
-    padding: 10px;
     height: 155px;
 `
+
 export const Img = styled.img`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
     transform: scale(1.05);
     transition: all 1s;
 
@@ -23,6 +22,19 @@ export const Img = styled.img`
         transform: scale(1);
     }
 `
+
+export const Inner = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-shadow: 0px -82px 32px -19px rgba(0, 0, 0, 0.42) inset;
+`
+
 export const Title = styled.h2`
     position: relative;
     width: fit-content;

@@ -13,7 +13,7 @@ import Price from './components/Price'
 import Availability from './components/Availability'
 import Icon from '../Icon'
 
-function Card({ img, category, title, count }) {
+function Card({ img, category, title, count=1 }) {
 
     const [isActiveFavorite, setFavorite] = useState(false)
 
@@ -28,9 +28,9 @@ function Card({ img, category, title, count }) {
                 <Price />
                 <Availability count={count} />
             </Row>
-            <Buttons>
+            <Buttons className={'buttons'}>
                 <Button
-                    widthFull={true}
+                    width={'100%'}
                     reverse={true}
                     icon={<Icon iconName="icon-cart" />}
                     text="ADD TO CART"

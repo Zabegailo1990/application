@@ -4,13 +4,14 @@ import {
     CustomPagination,
 } from './styles/MySwiper.styled'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Navigation } from 'swiper'
+import { Grid, Pagination, Navigation } from 'swiper'
 
 import Icon from '../Icon'
 
 import 'swiper/css'
-import 'swiper/css/pagination'
+import "swiper/css/grid"
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 function MySwiper(props) {
     const {
@@ -30,6 +31,7 @@ function MySwiper(props) {
         spaceBetween,
         slidesPerView,
         allowTouchMove,
+        rows = 1
     } = props
 
     const renderPagination = () => {
@@ -58,12 +60,17 @@ function MySwiper(props) {
     return (
         <StyledMySwiper positionNavigation={positionNavigation}>
             <Swiper
-                modules={[Pagination, Navigation]}
                 pagination={pagination}
                 navigation={navigation}
+                loop={false}
+                grid={{
+                    rows: rows,
+                    fill: 'row'
+                }}
                 spaceBetween={spaceBetween}
                 allowTouchMove={allowTouchMove}
                 slidesPerView={slidesPerView}
+                modules={[Grid, Pagination, Navigation]}
             >
                 {children?.map((slide, index) => (
                     <SwiperSlide key={index}>{slide}</SwiperSlide>

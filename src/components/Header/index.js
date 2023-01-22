@@ -1,8 +1,7 @@
 import styles from './scss/header.module.scss'
-import cn from 'classnames'
 
 function Header() {
-    return <header className={cn(styles.header)}></header>
+    return <header></header>
 }
 
 export default Header

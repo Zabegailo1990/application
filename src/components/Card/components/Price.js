@@ -9,6 +9,7 @@ import {
 } from '../styles/Price.styled'
 
 function Price() {
+    
     return (
         <StyledPrice>
             <Label>
