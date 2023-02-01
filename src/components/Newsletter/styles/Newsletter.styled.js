@@ -1,4 +1,6 @@
-.signup {
+import styled from 'styled-components'
+
+export const StyledNewsletter = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,36 +9,37 @@
     overflow: hidden;
     height: 226px;
     padding: 20px;
-}
+`
 
-.row {
+export const Row = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+`
 
-.title {
+export const Title = styled.h2`
     font-family: 'Montserrat';
     font-weight: 700;
     line-height: 30px;
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
-}
+`
 
-.decor {
+export const Decor = styled.span`
     color: #ffde00;
-}
+`
 
-.img {
+export const Img = styled.img`
     flex-shrink: 0;
     height: 46px;
     width: 68px;
-}
+`
 
-.text {
+export const Text = styled.p`
     font-size: 12px;
     line-height: 18px;
     font-weight: 500;
     color: #666666;
-}
+`
+

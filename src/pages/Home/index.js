@@ -2,12 +2,14 @@ import {
     StyledHome,
     Container,
     Promo,
+    SwiperBanners,
+    StyledGuarantee,
     Aside,
     Benefits,
     Categories,
     CardsContainer,
+    NewsSwiper,
     StyledCategory,
-    NewsSlider,
     Title,
     Locations,
     StyledLocation,
@@ -25,22 +27,24 @@ import Rating from '../../components/Rating'
 import Banner from '../../components/Banner'
 import Benefit from '../../components/Benefit'
 import Custom from '../../components/Custom'
-import Guarantee from '../../components/Guarantee'
 import Reviews from '../../components/Reviews'
-import Signup from '../../components/Signup'
+import Newsletter from '../../components/Newsletter'
 import MySwiper from '../../components/MySwiper'
 import Social from '../../components/Social'
 import CardsTab from './components/CardsTab'
+import Ticker from '../../components/Ticker'
 import List from '../../components/List'
 import News from '../../components/News'
+import Menu from '../../components/Menu'
 
 function Home() {
     return (
         <StyledHome>
             <Container>
                 <Promo>
-                    <MySwiper
+                    <SwiperBanners
                         interval={10}
+                        spaceBetween={15}
                         pagination={false}
                         navigation={false}
                     >
@@ -53,10 +57,10 @@ function Home() {
                                 buttonText={banner.buttonText}
                             />
                         ))}
-                    </MySwiper>
+                    </SwiperBanners>
                     <Aside>
-                        <Guarantee />
-                        <Signup />
+                        <StyledGuarantee />
+                        <Newsletter />
                     </Aside>
                 </Promo>
                 <Benefits>
@@ -84,14 +88,9 @@ function Home() {
                     <CardsTab />
                 </Container>
             </CardsContainer>
-            <List header={['shit', <Rating />]} />
+            <Ticker />
             <Container>
-                <Custom />
-            </Container>
-            <Social />
-            <Reviews data={ReviewsData()} />
-            <Container>
-                <NewsSlider>
+                <NewsSwiper>
                     <Title>News</Title>
                     <MySwiper spaceBetween={10} positionNavigation="top-right">
                         {newsData()?.map((item, index) => (
@@ -106,7 +105,15 @@ function Home() {
                             />
                         ))}
                     </MySwiper>
-                </NewsSlider>
+                </NewsSwiper>
+            </Container>
+            <List header={['shit', <Rating />]} />
+            <Container>
+                <Custom />
+            </Container>
+            <Social />
+            <Container>
+                <Reviews data={ReviewsData()} />
             </Container>
             <Locations>
                 <Img src="../media/img/home_locations.jpg" />
@@ -129,6 +136,7 @@ function Home() {
                     </MySwiper>
                 </Container>
             </Locations>
+            <Menu/>
         </StyledHome>
     )
 }

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/macro'
+import Icon from '../../Icon'
 
 export const StyledMySwiper = styled.div`
     position: relative;
@@ -61,6 +62,10 @@ export const CustomNavigation = styled.div`
     .swiper-button-disabled {
         opacity: 0.5;
     }
+`
+
+export const StyledIcon = styled(Icon)`
+    cursor: pointer;
 `
 
 export const CustomPagination = styled.div`

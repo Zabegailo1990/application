@@ -1,20 +1,19 @@
 import {
     StyledMySwiper,
     CustomNavigation,
+    StyledIcon,
     CustomPagination,
 } from './styles/MySwiper.styled'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Grid, Pagination, Navigation } from 'swiper'
-
-import Icon from '../Icon'
+import { Pagination, Navigation } from 'swiper'
 
 import 'swiper/css'
-import "swiper/css/grid"
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 function MySwiper(props) {
     const {
+        className,
         children,
         icons = ['icon-prev', 'icon-next'],
         buttonsClass = ['my-swiper__prev', 'my-swiper__next'],
@@ -31,7 +30,6 @@ function MySwiper(props) {
         spaceBetween,
         slidesPerView,
         allowTouchMove,
-        rows = 1
     } = props
 
     const renderPagination = () => {
@@ -45,7 +43,7 @@ function MySwiper(props) {
             return (
                 <CustomNavigation positionNavigation={positionNavigation}>
                     {icons?.map((item, index) => (
-                        <Icon
+                        <StyledIcon
                             key={index}
                             iconName={item}
                             color={buttonsColor}
@@ -58,19 +56,17 @@ function MySwiper(props) {
     }
 
     return (
-        <StyledMySwiper positionNavigation={positionNavigation}>
+        <StyledMySwiper
+            positionNavigation={positionNavigation}
+            className={className}
+        >
             <Swiper
                 pagination={pagination}
                 navigation={navigation}
-                loop={false}
-                grid={{
-                    rows: rows,
-                    fill: 'row'
-                }}
                 spaceBetween={spaceBetween}
                 allowTouchMove={allowTouchMove}
                 slidesPerView={slidesPerView}
-                modules={[Grid, Pagination, Navigation]}
+                modules={[Pagination, Navigation]}
             >
                 {children?.map((slide, index) => (
                     <SwiperSlide key={index}>{slide}</SwiperSlide>

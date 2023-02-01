@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import Category from '../../../components/Category'
 import Location from '../../../components/Location'
+import MySwiper from '../../../components/MySwiper'
+import Guarantee from '../../../components/Guarantee'
 
 export const StyledHome = styled.div`
     background-color: #fff;
@@ -13,7 +15,17 @@ export const Container = styled.div`
     margin: 0 auto;
 `
 
-export const Promo = styled.div``
+export const Promo = styled.div`
+    margin-bottom: 30px;
+`
+
+export const SwiperBanners = styled(MySwiper)`
+    margin-bottom: 15px;
+`
+
+export const StyledGuarantee = styled(Guarantee)`
+    margin-bottom: 15px;
+`
 
 export const Aside = styled.div``
 
@@ -21,7 +33,9 @@ export const Benefits = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 30px;
+    margin-bottom: 30px;
 `
 
 export const Categories = styled.div`
@@ -29,6 +43,7 @@ export const Categories = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
+    margin-bottom: 30px;
 `
 
 export const StyledCategory = styled(Category)`
@@ -40,11 +55,13 @@ export const StyledCategory = styled(Category)`
 `
 
 export const CardsContainer = styled.div`
+    padding: 52px 0 47px 0;
     background-color: #f7f8fb;
 `
 
-export const NewsSlider = styled.div`
+export const NewsSwiper = styled.div`
     position: relative;
+    margin-bottom: 30px;
 `
 
 export const Title = styled.h2`

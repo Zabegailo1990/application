@@ -35,6 +35,8 @@ export const Title = styled.h2`
 export const Text = styled.p`
     font-style: italic;
     font-size: 16px;
+    max-width: 800px;
+    margin: 0 auto;
     line-height: 24px;
     margin-bottom: 54px;
 `
