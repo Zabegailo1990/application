@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledList = styled.div`
-    background-color: lightgray;
-`
+export const StyledList = styled.div``
 
 export const Title = styled.h2`
     position: relative;

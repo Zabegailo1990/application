@@ -2,19 +2,16 @@ import { StyledRating, Item } from './styles/Rating.styled'
 import { useState } from 'react'
 import Icon from '../Icon'
 
-function Rating(props) {
-    const {
-        icons = [
-            'icon-star',
-            'icon-star',
-            'icon-star',
-            'icon-star',
-            'icon-star',
-        ],
-    } = props
+function Rating() {
+    const icons = [
+        'icon-star',
+        'icon-star',
+        'icon-star',
+        'icon-star',
+        'icon-star',
+    ]
 
     const [value, setValue] = useState(3)
-    console.log(value)
 
     return (
         <StyledRating>

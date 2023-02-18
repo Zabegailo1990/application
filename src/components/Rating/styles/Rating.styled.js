@@ -7,6 +7,7 @@ export const StyledRating = styled.ul`
 export const Item = styled.li`
     display: flex;
     align-items: center;
+    cursor: pointer;
     &:not(:last-child){
         margin-right: 1px;
     }
