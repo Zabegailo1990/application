@@ -16,7 +16,7 @@ export const Label = styled.div`
     margin-right: 6px;
 `
 
-export const Img = styled.img`
+export const Image = styled.div`
     position: absolute;
     top: 0;
     left: 0;

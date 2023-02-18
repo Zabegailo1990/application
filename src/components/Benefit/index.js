@@ -1,11 +1,13 @@
-import styles from './scss/benefit.module.scss'
-import { StyledBenefit, Img, Title, Text} from './styles/Benefit.styled'
+import { StyledBenefit, Img, Title, Text } from './styles/Benefit.styled'
 
 function Benefit(props) {
-    const {img, title, text} = props
+    const { img, title, text } = props
     return (
         <StyledBenefit>
-            <Img src={img} alt="" />
+            <Img
+                src={img}
+                alt=''
+            />
             <Title>{title}</Title>
             <Text>{text}</Text>
         </StyledBenefit>

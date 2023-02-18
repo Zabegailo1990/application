@@ -16,12 +16,17 @@ function CardsTab() {
             callback={handleSwitchTab}
             items={['new', 'hit', 'stock', 'most popular']}
         >
-            <MySwiper pagination={false} spaceBetween={10}>
+            <MySwiper
+                pagination={false}
+                spaceBetween={10}
+            >
                 {cardsData()
                     .filter((card) => {
                         switch (current) {
                             case 'new':
-                                return Date.now() - card.date <= 1000 * 3600 * 24 * 7
+                                return (
+                                    Date.now() - card.date <= 1000 * 3600 * 24 * 7
+                                )
                             case 'hit':
                                 return card.rating > 4
                             case 'most popular':

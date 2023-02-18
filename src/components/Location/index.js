@@ -19,7 +19,7 @@ function Location({ className, title, address, clock, phone }) {
             </Clock>
             <Phone>
                 <Icon iconName="icon-phone" color="#898e97" />
-                <Info>8 (951) 009-0700</Info>
+                <Info>{phone}</Info>
             </Phone>
         </StyledLocation>
     )

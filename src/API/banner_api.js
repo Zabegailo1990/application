@@ -1,4 +1,4 @@
-export function bannerData(){
+export function bannerData() {
     return [
         {
             id: 1,

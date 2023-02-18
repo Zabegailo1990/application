@@ -92,7 +92,10 @@ function Home() {
             <Container>
                 <NewsSwiper>
                     <Title>News</Title>
-                    <MySwiper spaceBetween={10} positionNavigation="top-right">
+                    <MySwiper
+                        spaceBetween={10}
+                        positionNavigation='top-right'
+                    >
                         {newsData()?.map((item, index) => (
                             <News
                                 key={index}
@@ -106,9 +109,12 @@ function Home() {
                         ))}
                     </MySwiper>
                 </NewsSwiper>
-            </Container>
-            <List header={['shit', <Rating />]} />
-            <Container>
+                <List
+                    title='TOP RATED'
+                    img={'../media/img/banner.jpg'}
+                    header={['category', <Rating />]}
+                    name='Fuji Gran Fondo 2.0 Road Bike - 2016 Limited Edition'
+                />
                 <Custom />
             </Container>
             <Social />
@@ -116,12 +122,12 @@ function Home() {
                 <Reviews data={ReviewsData()} />
             </Container>
             <Locations>
-                <Img src="../media/img/home_locations.jpg" />
+                <Img src='../media/img/home_locations.jpg' />
                 <Container>
                     <Title>Store location</Title>
                     <MySwiper
                         spaceBetween={10}
-                        positionNavigation="top-right"
+                        positionNavigation='top-right'
                         rows={2}
                     >
                         {dataLocations()?.map((item) => (
@@ -136,7 +142,7 @@ function Home() {
                     </MySwiper>
                 </Container>
             </Locations>
-            <Menu/>
+            <Menu />
         </StyledHome>
     )
 }

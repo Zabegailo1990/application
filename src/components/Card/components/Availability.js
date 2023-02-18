@@ -2,7 +2,6 @@ import { StyledAvailability, Label } from '../styles/Availability.styled'
 import Icon from '../../Icon'
 
 function Availability({ count = 0 }) {
-
     const statusAvailability = {
         label: count ? 'Available for order' : 'Not available',
         icon: count ? 'icon-checkmark' : 'icon-cancel',

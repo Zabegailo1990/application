@@ -13,14 +13,16 @@ import Price from './components/Price'
 import Availability from './components/Availability'
 import Icon from '../Icon'
 
-function Card({ img, category, title, count=1 }) {
-
+function Card({ img, category, title, count = 1 }) {
     const [isActiveFavorite, setFavorite] = useState(false)
 
     return (
         <StyledCard>
             <Promo>
-                <Img src={img} alt="" />
+                <Img
+                    src={img}
+                    alt=''
+                />
             </Promo>
             <Category>{category}</Category>
             <Title>{title}</Title>
@@ -32,15 +34,15 @@ function Card({ img, category, title, count=1 }) {
                 <Button
                     width={'100%'}
                     reverse={true}
-                    icon={<Icon iconName="icon-cart" />}
-                    text="ADD TO CART"
+                    icon={<Icon iconName='icon-cart' />}
+                    text='ADD TO CART'
                 />
                 <Button
                     onClick={() => setFavorite(!isActiveFavorite)}
                     theme='#e8ebf1'
                     icon={
                         <Icon
-                            iconName="icon-heart"
+                            iconName='icon-heart'
                             color={isActiveFavorite ? 'red' : '#818690'}
                         />
                     }

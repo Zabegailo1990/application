@@ -1,28 +1,24 @@
-import styles from './scss/list.module.scss'
-import { StyledList, Item, Img, Header } from './styles/List.styled'
+import {
+    StyledList,
+    Title,
+    Item,
+    Img,
+    Col,
+    Row,
+    Name,
+} from './styles/List.styled'
 
-function List({ header, name, footer, img }) {
+function List({ title, img, header, name, footer }) {
     return (
         <StyledList>
+            <Title>{title}</Title>
             <Item>
-                {img && <Img src={img} alt="" />}
-                {header && (
-                    <Header>
-                        {header.map((item, index) => (
-                            <div className={styles.item} key={index}>
-                                {item}
-                            </div>
-                        ))}
-                    </Header>
-                )}
-                {(name || footer) && (
-                    <div className={styles.column}>
-                        {name && <h2 className={styles.name}>{name}</h2>}
-                        {footer && (
-                            <div className={styles.footer}>{footer}</div>
-                        )}
-                    </div>
-                )}
+                <Img src={img} />
+                <Col>
+                    {header && <Row>{header}</Row>}
+                    <Name>{name}</Name>
+                    {footer && <Row>{footer}</Row>}
+                </Col>
             </Item>
         </StyledList>
     )

@@ -15,10 +15,12 @@ function Newsletter() {
         <StyledNewsletter>
             <Row>
                 <Title>
-                    signup
-                    <Decor> for newsletter</Decor>
+                    signup<Decor> for newsletter</Decor>
                 </Title>
-                <Img src="../media/img/mail.svg" alt="" />
+                <Img
+                    src='../media/img/mail.svg'
+                    alt=''
+                />
             </Row>
             <Text>
                 Stylish bicycle mechanic doing his professional work in workshop

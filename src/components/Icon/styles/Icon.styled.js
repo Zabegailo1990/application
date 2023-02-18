@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledIcon = styled.svg`
-    width: 12px;
-    height: 12px;
+    width: ${({ widthSize }) => widthSize || '12px'};
+    height: ${({ heightSize }) => heightSize || '12px'};
     display: block;
-    fill: ${({theme}) => theme.length > 0 ? theme : '#282828'};
+    fill: ${({ colorIcon }) => colorIcon};
 `

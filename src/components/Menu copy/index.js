@@ -1,6 +1,6 @@
 import { StyledMenu, List, Item, Label } from './styles/Menu.styled'
-import { useState } from 'react'
 import Icon from '../Icon'
+import { useState, useEffect } from 'react'
 
 const menu_api = [
     {
@@ -49,6 +49,23 @@ const menu_api = [
                     {
                         id: '4.3.3',
                         name: 'SubItem_3',
+                        list: [
+                            {
+                                id: '4.3.3.1',
+                                name: 'SubItem_1',
+                                path: '#',
+                            },
+                            {
+                                id: '4.3.3.2',
+                                name: 'SubItem_2',
+                                path: '#',
+                            },
+                            {
+                                id: '4.3.3.3',
+                                name: 'SubItem_3',
+                                path: '#',
+                            },
+                        ],
                     },
                 ],
             },
@@ -83,38 +100,40 @@ const menu_api = [
 ]
 
 function Menu() {
-    const [isOpen, setIsOpen] = useState([])
-    console.log(isOpen)
-
-    function activeList(id, event) {
-        event.stopPropagation()
-        if (isOpen.includes(id)) {
-            setIsOpen(() => isOpen.filter((el) => el !== id))
-        } else {
-            setIsOpen(() => [...isOpen, id])
-        }
-    }
-
-    const renderMenu = (arr) => {
-        return (
-            <List>
-                {arr.map((item, index) => (
-                    <Item
-                        key={index}
-                        onClick={(event) => activeList(item.id, event)}
-                    >
-                        <Label>{item.name}</Label>
-                        {item?.list && <Icon iconName='icon-next' />}
-                        {isOpen.includes(item.id) && item?.list &&
-                            renderMenu(item.list, item.id)
-                        }
-                    </Item>
-                ))}
-            </List>
-        )
-    }
-
-    return <StyledMenu>{renderMenu(menu_api)}</StyledMenu>
+    return <StyledMenu><RenderMenu arr={menu_api} parentIsOpen={true}/></StyledMenu>
 }
 
 export default Menu
+
+const RenderMenu = ({arr, parentIsOpen}) => {
+    const [isOpen, setIsOpen] = useState([])
+    const [menu, setMenu] = useState([])
+
+    console.log(isOpen)
+
+    useEffect(() => {
+        if(arr) setMenu(() => arr)
+    }, [arr])
+
+    function activeList (item) {
+        if(isOpen.includes(item.id)){
+            setIsOpen(()=> isOpen.filter(el => el !== item.id))
+        }else{
+            setIsOpen(()=> [...isOpen, item.id])
+        }
+    }
+
+    return (
+        <List>
+            {menu.map((item, index) => (
+                <Item
+                    key={index}
+                >
+                    <Label onClick={() => activeList(item)}>{item.name}</Label>
+                    {item.list && <Icon iconName={'icon-next'} />}
+                    {isOpen.includes(item.id) && parentIsOpen && item.list && <RenderMenu arr={item.list} parentIsOpen={isOpen.includes(item.id)}/>}
+                </Item>
+            ))}
+        </List>
+    )
+}
