@@ -9,6 +9,7 @@ export const Title = styled.h2`
     color: #282828;
     font-size: 14px;
     padding-bottom: 15px;
+    
     margin-bottom: 22px;
 
     &::before {
