@@ -1,7 +1,7 @@
-import styles from './scss/header.module.scss'
+import { StyledHeader } from "./styles/Header.styled"
 
 function Header() {
-    return <header></header>
+    return <StyledHeader></StyledHeader>
 }
 
 export default Header

@@ -23,19 +23,17 @@ import {
     newsData,
     dataLocations,
 } from '../../API'
-import Rating from '../../components/Rating'
 import Banner from '../../components/Banner'
 import Benefit from '../../components/Benefit'
 import Custom from '../../components/Custom'
 import Reviews from '../../components/Reviews'
 import Newsletter from '../../components/Newsletter'
 import MySwiper from '../../components/MySwiper'
-import Social from '../../components/Social'
 import CardsTab from './components/CardsTab'
 import Ticker from '../../components/Ticker'
-import List from '../../components/List'
+import Lists from './components/Lists'
 import News from '../../components/News'
-import Menu from '../../components/Menu'
+import Footer from '../../components/Footer'
 
 function Home() {
     return (
@@ -109,15 +107,8 @@ function Home() {
                         ))}
                     </MySwiper>
                 </NewsSwiper>
-                <List
-                    title='TOP RATED'
-                    img={'../media/img/banner.jpg'}
-                    header={['category', <Rating />]}
-                    name='Fuji Gran Fondo 2.0 Road Bike - 2016 Limited Edition'
-                />
                 <Custom />
             </Container>
-            <Social />
             <Container>
                 <Reviews data={ReviewsData()} />
             </Container>
@@ -142,7 +133,10 @@ function Home() {
                     </MySwiper>
                 </Container>
             </Locations>
-            <Menu />
+            <Container>
+                <Lists />
+            </Container>
+            <Footer />
         </StyledHome>
     )
 }

@@ -12,6 +12,7 @@ import {
 import Price from './components/Price'
 import Availability from './components/Availability'
 import Icon from '../Icon'
+import Rating from '../Rating'
 
 function Card({ img, category, title, count = 1 }) {
     const [isActiveFavorite, setFavorite] = useState(false)
@@ -19,13 +20,11 @@ function Card({ img, category, title, count = 1 }) {
     return (
         <StyledCard>
             <Promo>
-                <Img
-                    src={img}
-                    alt=''
-                />
+                <Img src={img} />
             </Promo>
             <Category>{category}</Category>
             <Title>{title}</Title>
+            <Rating />
             <Row>
                 <Price />
                 <Availability count={count} />

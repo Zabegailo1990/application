@@ -76,7 +76,7 @@ export const Title = styled.h2`
 
 export const Locations = styled.div`
     position: relative;
-    padding: 49px 0 0 0;
+    padding: 49px 0 30px 0;
 `
 
 export const StyledLocation = styled(Location)`

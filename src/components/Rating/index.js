@@ -2,28 +2,22 @@ import { StyledRating, Item } from './styles/Rating.styled'
 import { useState } from 'react'
 import Icon from '../Icon'
 
-function Rating() {
-    const icons = [
-        'icon-star',
-        'icon-star',
-        'icon-star',
-        'icon-star',
-        'icon-star',
-    ]
+function Rating({score = 3}) {
+    const [value, setValue] = useState(score)
 
-    const [value, setValue] = useState(3)
+    const estimates = [1, 2, 3, 4, 5]
 
     return (
         <StyledRating>
-            {icons?.map((item, index) => (
+            {estimates?.map((item, index) => (
                 <Item
                     key={index}
-                    onClick={() => setValue(index + 1)}
+                    onClick={() => setValue(item)}
                 >
                     <Icon
                         color={index < value ? '#ffc600' : '#d4d4d4'}
                         size={['10px', '10px']}
-                        iconName={item}
+                        iconName='icon-star'
                     />
                 </Item>
             ))}
