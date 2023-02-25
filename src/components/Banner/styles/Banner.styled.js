@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Button from '../../Button'
 
 export const StyledBanner = styled.div`
     position: relative;
@@ -41,8 +40,4 @@ export const Offer = styled.div`
     font-size: 12px;
     font-weight: 500;
     color: #fff;
-`
-
-export const StyledButton = styled(Button)`
-    flex-shrink: 0;
 `

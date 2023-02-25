@@ -1,4 +1,5 @@
 import Icon from '../Icon'
+import Button from '../Button'
 import {
     StyledBanner,
     Image,
@@ -19,7 +20,7 @@ function Banner({ img, title, offer, buttonText }) {
                     <Title>{title}</Title>
                     <Offer>{offer}</Offer>
                 </Col>
-                <StyledButton
+                <Button
                     text={buttonText}
                     textSize={'10px'}
                     icon={<Icon iconName={'icon-right'} />}

@@ -1,12 +1,11 @@
-import styles from './scss/field.module.scss'
+import { StyledField, Input } from './styles/Field.styled'
 
 function Field({ button, placeholder }) {
-
     return (
-        <div className={styles.field}>
-            <input className={styles.field__input} placeholder={placeholder} />
+        <StyledField>
+            <Input placeholder={placeholder} />
             {button}
-        </div>
+        </StyledField>
     )
 }
 

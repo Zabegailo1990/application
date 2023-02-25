@@ -6,7 +6,7 @@ export const StyledFooter = styled.div`
 
 export const Container = styled.div``
 
-export const Inner = styled.div``
+export const Column = styled.div``
 
 export const Title = styled.h2`
     position: relative;
