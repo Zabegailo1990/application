@@ -23,10 +23,10 @@ function Button({
     return (
         <StyledButton
             as={Tag}
+            className={className}
             href={path}
             widthFull={width}
             bg={theme}
-            className={className}
             {...props}
         >
             {content}

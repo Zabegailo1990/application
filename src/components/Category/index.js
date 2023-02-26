@@ -1,13 +1,22 @@
-import { StyledCategory, Inner, Img, Title } from './styles/Category.styled'
+import { StyledCategory, Img, Inner, Row, Title, Count } from './styles/Category.styled'
 
 function Category(props) {
-    const { className, img, title } = props
+    const { className, img, title, link } = props
 
     return (
-        <StyledCategory className={className}>
-            <Img src={img} alt="" />
+        <StyledCategory
+            className={className}
+            to={link}
+        >
+            <Img
+                src={img}
+                alt=''
+            />
             <Inner>
-                <Title>{title}</Title>
+                <Row>
+                    <Title>{title}</Title>
+                </Row>
+                <Count>23</Count>
             </Inner>
         </StyledCategory>
     )

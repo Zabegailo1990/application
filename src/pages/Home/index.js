@@ -1,6 +1,5 @@
 import {
     StyledHome,
-    Container,
     Promo,
     SwiperBanners,
     StyledGuarantee,
@@ -23,6 +22,7 @@ import {
     newsData,
     dataLocations,
 } from '../../API'
+import Container from '../../components/Container'
 import Banner from '../../components/Banner'
 import Benefit from '../../components/Benefit'
 import Custom from '../../components/Custom'
@@ -34,6 +34,17 @@ import Ticker from '../../components/Ticker'
 import Lists from './components/Lists'
 import News from '../../components/News'
 import Footer from '../../components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import Catalog from '../Catalog'
+
+const links = [
+    '/catalog',
+    '/catalog',
+    '/catalog',
+    '/catalog',
+    '/catalog',
+    '/catalog',
+]
 
 function Home() {
     return (
@@ -72,8 +83,9 @@ function Home() {
                     ))}
                 </Benefits>
                 <Categories>
-                    {categoryData()?.map((item) => (
+                    {categoryData()?.map((item, index) => (
                         <StyledCategory
+                            link={links[index]}
                             key={item.id}
                             img={item.img}
                             title={item.title}

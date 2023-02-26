@@ -1,7 +1,11 @@
-import { StyledTag } from "./styles/Tag.styled";
+import { StyledTag, Label } from './styles/Tag.styled'
 
-function Tag(){
-    return <StyledTag></StyledTag>
+function Tag({ label }) {
+    return (
+        <StyledTag>
+            <Label>{label}</Label>
+        </StyledTag>
+    )
 }
 
 export default Tag

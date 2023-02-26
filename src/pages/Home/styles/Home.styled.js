@@ -8,13 +8,6 @@ export const StyledHome = styled.div`
     background-color: #fff;
 `
 
-export const Container = styled.div`
-    position: relative;
-    max-width: 1172px;
-    padding: 0 10px;
-    margin: 0 auto;
-`
-
 export const Promo = styled.div`
     margin-bottom: 30px;
 `
