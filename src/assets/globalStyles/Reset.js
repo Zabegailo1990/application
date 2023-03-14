@@ -42,6 +42,11 @@ const Reset = createGlobalStyle`
         padding: 0;
         margin: 0;
     }
+
+    input {
+        margin: 0;
+        font-size: inherit;
+    }
 `
 
-export default Reset;
+export default Reset

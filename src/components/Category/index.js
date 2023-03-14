@@ -16,7 +16,7 @@ function Category(props) {
                 <Row>
                     <Title>{title}</Title>
                 </Row>
-                <Count>23</Count>
+                <Count>23545</Count>
             </Inner>
         </StyledCategory>
     )

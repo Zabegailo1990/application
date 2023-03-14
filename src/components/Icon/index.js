@@ -6,6 +6,7 @@ function Icon({
     iconName,
     color = '#282828',
     size = [],
+    ...props
 }) {
     return (
         <StyledIcon
@@ -13,6 +14,7 @@ function Icon({
             colorIcon={color}
             widthSize={size[0]}
             heightSize={size[1]}
+            {...props}
         >
             <use xlinkHref={`${Sprite}#${iconName}`} />
         </StyledIcon>

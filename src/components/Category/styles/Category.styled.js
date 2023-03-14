@@ -16,12 +16,6 @@ export const Img = styled.img`
     top: 0;
     left: 0;
     z-index: 0;
-    transform: scale(1.05);
-    transition: all 1s;
-
-    ${StyledCategory}:hover & {
-        transform: scale(1);
-    }
 `
 
 export const Inner = styled.div`
@@ -64,7 +58,9 @@ export const Title = styled.h2`
 `
 
 export const Count = styled.div`
-    font-size: 13px;
+    font-family: 'Roboto';
+    letter-spacing: 1.5px;
+    font-size: 12px;
     color: #fff;
     font-weight: 500;
 `
