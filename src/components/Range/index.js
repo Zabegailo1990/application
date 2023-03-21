@@ -1,34 +1,73 @@
 import {
     StyledRange,
-    Сontroller,
+    Slider,
     Track,
     Progress,
     Row,
     Price,
     Decor
 } from './styles/Range.styled'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
-function Range() {
-    const [minValue, setMinValue] = useState(0)
-    const [maxValue, setMaxValue] = useState(100)
+function Range({initialMin, initialMax, min, max, step, priceCap}) {
+    const progressRef = useRef(null)
 
-    console.log(minValue)
+    const [minValue, setMinValue] = useState(initialMin)
+    const [maxValue, setMaxValue] = useState(initialMax)
+
+    const handleMin = (e) => {
+        if(maxValue - minValue >= priceCap && maxValue <= max){
+            if(parseInt(e.target.value) > parseInt(maxValue)){
+            }else{
+                setMinValue(parseInt(e.target.value))
+            }
+        }else{
+            if(parseInt(e.target.value) < minValue){
+                setMinValue(parseInt(e.target.value))
+            }
+        }
+    }
+
+    const handleMax = (e) => {
+        if(maxValue - minValue >= priceCap && maxValue <= max){
+            if(parseInt(e.target.value) < parseInt(minValue)){
+            }else{
+                setMaxValue(parseInt(e.target.value))
+            }
+        }else{
+            if(parseInt(e.target.value) > maxValue){
+                setMaxValue(parseInt(e.target.value))
+            }
+        }
+    }
+
+    useEffect(() =>{
+        progressRef.current.style.left = (minValue / max) * step + "%"
+        progressRef.current.style.right = step - (maxValue / max) * step + "%"
+    }, [minValue, maxValue])
 
     return (
         <StyledRange>
             <Track>
-                <Сontroller
+                <Slider
                     type='range'
+                    min={min}
+                    max={max}
+                    step={step}
+                    priceCap={priceCap}
                     value={minValue}
-                    onChange={(e) => setMinValue(e.target.value)}
+                    onChange={handleMin}
                 />
-                <Сontroller
+                <Slider
                     type='range'
+                    min={min}
+                    max={max}
+                    step={step}
+                    priceCap={priceCap}
                     value={maxValue}
-                    onChange={(e) => setMaxValue(e.target.value)}
+                    onChange={handleMax}
                 />
-                <Progress />
+                <Progress ref={progressRef}/>
             </Track>
             <Row>
                 <Price
