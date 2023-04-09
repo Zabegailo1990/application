@@ -1,24 +1,14 @@
 import Reset from './assets/globalStyles/Reset.js'
 import Fonts from './assets/globalStyles/Fonts'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Catalog from './pages/Catalog/index.js'
+import router  from './routes/index.js'
+import { RouterProvider } from 'react-router-dom'
 
 function App() {
     return (
         <div className='App'>
             <Fonts />
             <Reset />
-            <Routes>
-                <Route
-                    path='/'
-                    element={<Home />}
-                />
-                <Route
-                    path='/catalog'
-                    element={<Catalog />}
-                />
-            </Routes>
+            <RouterProvider router={router} />
         </div>
     )
 }

@@ -5,28 +5,30 @@ import {
     Title,
     Row,
     Category,
-} from '../styles/Lists.styled'
-import Rating from '../../../components/Rating'
-import { cardsData } from '../../../API'
+} from "../styles/Lists.styled";
+import Rating from "../../../components/Rating";
+import { cardsData } from "../../../API";
 
 function rangeList(key) {
-    return cardsData().sort((a, b) => b[key] - a[key]).splice(0, 3)
+    return cardsData()
+        .sort((a, b) => b[key] - a[key])
+        .splice(0, 3);
 }
 
 let map = [
     {
-        title: 'best seling',
-        sort: rangeList('sales'),
+        title: "best seling",
+        sort: rangeList("sales"),
     },
     {
-        title: 'top rate',
-        sort: rangeList('rating'),
+        title: "top rate",
+        sort: rangeList("rating"),
     },
     {
-        title: 'latest',
-        sort: rangeList('rating'),
+        title: "latest",
+        sort: rangeList("rating"),
     },
-]
+];
 
 function Lists() {
     return (
@@ -50,7 +52,7 @@ function Lists() {
                 </List>
             ))}
         </StyledLists>
-    )
+    );
 }
 
-export default Lists
+export default Lists;

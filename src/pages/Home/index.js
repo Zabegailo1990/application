@@ -34,17 +34,6 @@ import Ticker from '../../components/Ticker'
 import Lists from './components/Lists'
 import News from '../../components/News'
 import Footer from '../../components/Footer'
-import { Routes, Route } from 'react-router-dom'
-import Catalog from '../Catalog'
-
-const links = [
-    '/catalog',
-    '/catalog',
-    '/catalog',
-    '/catalog',
-    '/catalog',
-    '/catalog',
-]
 
 function Home() {
     return (
@@ -85,7 +74,7 @@ function Home() {
                 <Categories>
                     {categoryData()?.map((item, index) => (
                         <StyledCategory
-                            link={links[index]}
+                            link={`catalog/${item.category}`}
                             key={item.id}
                             img={item.img}
                             title={item.title}
