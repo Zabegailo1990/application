@@ -1,38 +1,36 @@
-import { useState } from 'react'
-import Tabs from '../../../components/Tabs'
-import Card from '../../../components/Card'
-import MySwiper from '../../../components/MySwiper'
-import { cardsData } from '../../../API'
+import { useState } from "react";
+import Tabs from "../../../components/Tabs";
+import Card from "../../../components/Card";
+import MySwiper from "../../../components/MySwiper";
+import { cardsData } from "../../../API";
 
 function CardsTab() {
-    const [current, setCurrent] = useState()
+    const [current, setCurrent] = useState();
 
     const handleSwitchTab = (label) => {
-        setCurrent(label)
-    }
+        setCurrent(label);
+    };
 
     return (
         <Tabs
             callback={handleSwitchTab}
-            items={['new', 'hit', 'stock', 'most popular']}
+            items={["new", "hit", "stock", "most popular"]}
         >
-            <MySwiper
-                pagination={false}
-                spaceBetween={10}
-            >
+            <MySwiper pagination={false} spaceBetween={10}>
                 {cardsData()
                     .filter((card) => {
                         switch (current) {
-                            case 'new':
+                            case "new":
                                 return (
-                                    Date.now() - card.date <= 1000 * 3600 * 24 * 7
-                                )
-                            case 'hit':
-                                return card.rating > 4
-                            case 'most popular':
-                                return card.sales > 30
+                                    Date.now() - card.date <=
+                                    1000 * 3600 * 24 * 7
+                                );
+                            case "hit":
+                                return card.rating > 4;
+                            case "most popular":
+                                return card.sales > 30;
                             default:
-                                return true
+                                return true;
                         }
                     })
                     .map((card) => (
@@ -46,7 +44,7 @@ function CardsTab() {
                     ))}
             </MySwiper>
         </Tabs>
-    )
+    );
 }
 
-export default CardsTab
+export default CardsTab;

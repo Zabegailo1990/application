@@ -18,7 +18,7 @@ function Tabs(props) {
     }
 
     useEffect(() => {
-        callback(items[0])
+        callback(items[1])
     }, [])
 
     return (
